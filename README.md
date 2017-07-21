@@ -1,38 +1,29 @@
-## 目录
-* 1、功能描述
-* 2、效果图
-* 3、如何使用
-  - 3.1、 Android Studio导入方法
-  - 3.2、 项目中如何使用
-    - 3.2.1、布局中使用
-    - 3.2.2、在代码中使用
-    - 3.2.3、属性介绍
-* 4、 实现原理
-  - 4.1、需求分析
-  - 4.2、代码封装
-  - 4.3、总结
-* 5、更新日志
+# SuperTextView
+
+[![](https://jitpack.io/v/lygttpod/SuperTextView.svg)](https://jitpack.io/#lygttpod/SuperTextView)
+[![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SuperTextView-green.svg?style=true)](https://github.com/lygttpod)
+[![](https://img.shields.io/github/stars/lygttpod/SuperTextView.svg)](https://github.com/lygttpod/SuperTextView/stargazers)
+[![](https://img.shields.io/github/forks/lygttpod/SuperTextView.svg)](https://github.com/lygttpod/SuperTextView/network)
+
+
+### 重磅推出SuperTextView2.x版本，属性参数相比1.x有些变化，1.x的用户升级2.x的时候请注意
+
 
 ## 1、功能描述
-> [**SuperTextView**](https://github.com/lygttpod/SuperTextView)是一个功能强大的View，可以满足日常大部分布局样式，开发者可已自行组合属性配置出属于自己风格的样式!可能描述起来没有概念，还是直接看效果图吧！
+>  [**SuperTextView**](https://github.com/lygttpod/SuperTextView)是一个功能强大的View，可以满足日常大部分布局样式，开发者可已自行组合属性配置出属于自己风格的样式!可能描述起来没有概念，还是直接看效果图吧！
 
-> 简化版 [**CommonTextView**](https://github.com/lygttpod/SuperTextView/blob/master/CommonTextView_Readme.md)只是逻辑简化，其实功能并不差少哦，有兴趣的可以看看
+>  [**SuperButton**](https://github.com/lygttpod/SuperTextView/blob/master/SuperButton_Readme.md)拥有shape文件的大部分属性，从此写shape属性变得非常简单
+
+>  [**CommonTextView**](https://github.com/lygttpod/SuperTextView/blob/master/CommonTextView_Readme.md)只是SuperTextView的逻辑简化，其实功能并不差少哦，有兴趣的可以看看
 
 > 如果觉得对你有用的话，点一下右上的星星赞一下吧!
 
-## 2、 效果图
+## 2、 效果 [**Demo下载地址**]( https://fir.im/eft1)
 
-<div  align="center">    
-<img src="https://github.com/lygttpod/SuperTextView/blob/master/screenshot/screenshot.png" width = "360" height = "640" alt="效果图" align=center /></div>
-<div  align="center">    
-<img src="https://github.com/lygttpod/SuperTextView/blob/master/screenshot/type1.png" width = "270" height = "480" alt="效果图" align=center />
-<img src="https://github.com/lygttpod/SuperTextView/blob/master/screenshot/type2.png" width = "270" height = "480" alt="效果图" align=center />
-<img src="https://github.com/lygttpod/SuperTextView/blob/master/screenshot/type3.png" width = "270" height = "480" alt="效果图" align=center />
-<img src="https://github.com/lygttpod/SuperTextView/blob/master/screenshot/type4.png" width = "270" height = "480" alt="效果图" align=center />
-<img src="https://github.com/lygttpod/SuperTextView/blob/master/screenshot/type5.png" width = "270" height = "480" alt="效果图" align=center />
-<img src="https://github.com/lygttpod/SuperTextView/blob/master/screenshot/type6.png" width = "270" height = "480" alt="效果图" align=center />
-</div>
-
+<p align="center">
+  <img src="http://osnoex6vf.bkt.clouddn.com/supertextview.jpg">
+</p>
 
 ## 3、如何使用
 ### 3.1、Android Studio导入方法，添加Gradle依赖
@@ -50,407 +41,303 @@
 ```
         dependencies {
         ...
-        compile 'com.github.lygttpod:SuperTextView:1.1.2'
+        compile 'com.github.lygttpod:SuperTextView:2.0.5'
         }
 ```
+
+> ## 重写SuperTextView，功能更加全面，部分方法及属性有变更，1.x版本的老用户请注意
+
 ### 3.2、项目中如何使用
-##### 3.2.1、布局中如何使用（示例中只列出部分属性，开发者可根据具体需求使用其他属性）
+#### 3.2.1、布局中如何使用（示例中只列出部分属性，开发者可根据具体需求使用其他属性）
 ```
-        <com.allen.supertextviewlibrary.SuperTextView
-                android:id="@+id/super_tv"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                stv:sLeftBottomTextColor2="@color/colorAccent"
-                stv:sLeftBottomTextString="招商银行（8888）"
-                stv:sLeftBottomTextString2="限额说明>>"
-                stv:sLeftIconRes="@drawable/bank_zhao_shang"
-                stv:sLeftTopTextString="银行卡支付"
-                stv:sRightCheckBoxRes="@drawable/circular_check_bg"
-                stv:sRightCheckBoxShow="true"
-                stv:sLineShow="bottom"
-                 />
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                stv:sCenterBottomTextColor="@color/colorAccent"
+                stv:sCenterBottomTextString="限额说明>>"
+                stv:sCenterTopTextString=" "
+                stv:sCenterViewGravity="left_center"
+                stv:sLeftBottomTextString="招商银行（8888）"
+                stv:sLeftIconRes="@drawable/bank_zhao_shang"
+                stv:sLeftTopTextString="银行卡支付"
+                stv:sLeftViewGravity="left_center"
+                stv:sRightCheckBoxRes="@drawable/circular_check_bg"
+                stv:sRightViewType="checkbox" />
         注意：
-                1、上下的线可以通过   sLineShow 设置  有四种显示方式 none，top，bottom，both
+                1、上下的线可以通过   sDividerLineType 设置  有四种显示方式 none，top，bottom，both
                 2、通过设置 sUseRipple=true 开启水波效果
 ```
-##### 3.2.2、代码中如何使用
+#### 3.2.2、代码中如何使用
 ```
        /**
      * 可以通过链式设置大部分常用的属性值
      */
-        superTextView.setLeftIcon(drawable)
-                .setLeftString("")
-                .setLeftTVColor(0)
-                .setLeftTopString("")
-                .setLeftTopTVColor(0)
-                .setLeftBottomString("")
-                .setLeftBottomTVColor(0)
-                .setLeftBottomString2("")
-                .setLeftBottomTVColor2(0)
-                .setRightString("")
-                .setRightTVColor(0)
-                .setCbChecked(true)
-                .setCbBackground(drawable)
-                .setRightIcon(drawable)
-                .setRightString("")
-                .setRightTVColor(0)
-                .setLeftString("")
+         superTextView.setLeftTopString("")
+                 .setLeftString("")
+                 .setLeftBottomString("")
+                 .setCenterTopString("")
+                 .setCenterString("")
+                 .setCenterBottomString("")
+                 .setRightTopString("")
+                 .setRightString("")
+                 .setRightBottomString("")
+                 .setLeftIcon(0)
+                 .setRightIcon(0)
+                 .setRightTvDrawableLeft(null)
+                 .setRightTvDrawableRight(null)
+                 .setCbChecked(true)
+                 .setCbBackground(null);
 ```
-###### 点击事件（可根据需求选择实现单个或者多个点击事件，需要配合xml添加是否允许点击的属性，详情见属性参数的意义）
+#### 3.2.3点击事件（可根据需求选择实现单个或者多个点击事件）
 ```
-        superTextView.setOnSuperTextViewClickListener(new SuperTextView.OnSuperTextViewClickListener() {
-                    @Override
-                    public void onSuperTextViewClick() {
-                        super.onSuperTextViewClick();
-                        //do something
-                    }
-
-                    @Override
-                    public void onLeftTopClick() {
-                        super.onLeftTopClick();
-                        //do something
-                    }
-
-                    @Override
-                    public void onLeftBottomClick() {
-                        super.onLeftBottomClick();
-                        //do something
-                    }
-
-                    @Override
-                    public void onLeftBottomClick2() {
-                        super.onLeftBottomClick2();
-                        //do something
-                    }
-                });
-
-                注意：点击事件需要配合属性值使用
-                sLeftTopViewIsClickable= true
-                sLeftBottomViewIsClickable= true
-                sLeftBottomView2IsClickable= true
+        /**
+         * 根据实际需求对需要的View设置点击事件
+         */
+        superTextView.setOnSuperTextViewClickListener(new SuperTextView.OnSuperTextViewClickListener() {
+            @Override
+            public void onClickListener() {
+                string = "整个item的点击事件";
+                Toast.makeText(ClickActivity.this, string, Toast.LENGTH_SHORT).show();
+            }
+        }).setLeftTopTvClickListener(new SuperTextView.OnLeftTopTvClickListener() {
+            @Override
+            public void onClickListener() {
+                string = superTextView.getLeftTopString();
+                Toast.makeText(ClickActivity.this, string, Toast.LENGTH_SHORT).show();
+            }
+        }).setLeftTvClickListener(new SuperTextView.OnLeftTvClickListener() {
+            @Override
+            public void onClickListener() {
+                string = superTextView.getLeftString();
+                Toast.makeText(ClickActivity.this, string, Toast.LENGTH_SHORT).show();
+            }
+        }).setLeftBottomTvClickListener(new SuperTextView.OnLeftBottomTvClickListener() {
+            @Override
+            public void onClickListener() {
+                string = superTextView.getLeftBottomString();
+                Toast.makeText(ClickActivity.this, string, Toast.LENGTH_SHORT).show();
+            }
+        }).setCenterTopTvClickListener(new SuperTextView.OnCenterTopTvClickListener() {
+            @Override
+            public void onClickListener() {
+                string = superTextView.getCenterTopString();
+                Toast.makeText(ClickActivity.this, string, Toast.LENGTH_SHORT).show();
+            }
+        }).setCenterTvClickListener(new SuperTextView.OnCenterTvClickListener() {
+            @Override
+            public void onClickListener() {
+                string = superTextView.getCenterString();
+                Toast.makeText(ClickActivity.this, string, Toast.LENGTH_SHORT).show();
+            }
+        }).setCenterBottomTvClickListener(new SuperTextView.OnCenterBottomTvClickListener() {
+            @Override
+            public void onClickListener() {
+                string = superTextView.getCenterBottomString();
+                Toast.makeText(ClickActivity.this, string, Toast.LENGTH_SHORT).show();
+            }
+        }).setRightTopTvClickListener(new SuperTextView.OnRightTopTvClickListener() {
+            @Override
+            public void onClickListener() {
+                string = superTextView.getRightTopString();
+                Toast.makeText(ClickActivity.this, string, Toast.LENGTH_SHORT).show();
+            }
+        }).setRightTvClickListener(new SuperTextView.OnRightTvClickListener() {
+            @Override
+            public void onClickListener() {
+                string = superTextView.getRightString();
+                Toast.makeText(ClickActivity.this, string, Toast.LENGTH_SHORT).show();
+            }
+        }).setRightBottomTvClickListener(new SuperTextView.OnRightBottomTvClickListener() {
+            @Override
+            public void onClickListener() {
+                string = superTextView.getRightBottomString();
+                Toast.makeText(ClickActivity.this, string, Toast.LENGTH_SHORT).show();
+            }
+        }).setSwitchCheckedChangeListener(new SuperTextView.OnSwitchCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            }
+        }).setCheckBoxCheckedChangeListener(new SuperTextView.OnCheckBoxCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            }
+        }).setLeftImageViewClickListener(new SuperTextView.OnLeftImageViewClickListener() {
+            @Override
+            public void onClickListener() {
+            }
+        }).setRightImageViewClickListener(new SuperTextView.OnRightImageViewClickListener() {
+            @Override
+            public void onClickListener() {
+            }
+        });
 ```
-###### 使用第三方库(Picasso或者Glide)加载网络图片
+#### 3.2.4使用第三方库(Picasso或者Glide)加载网络图片
 ```
-         Picasso.with(this)
-         .load(url)
-         .placeholder(R.drawable.head_default)
-         .into((ImageView) superTextView.getView(SuperTextView.leftImageViewId));
+        Picasso.with(this).load("https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3860616424,1789830124&fm=80&w=179&h=119&img.PNG")
+                .placeholder(R.drawable.head_default).into(superTextView.getLeftIconIV());
+
+
+        Glide.with(this).load("https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=219781665,3032880226&fm=80&w=179&h=119&img.JPEG")
+                .placeholder(R.drawable.head_default).fitCenter().into(superTextView2.getRightIconIV());
+
+
+        Glide.with(this).load("https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3860616424,1789830124&fm=80&w=179&h=119&img.PNG")
+                .placeholder(R.drawable.head_default)
+                .into(new SimpleTarget<GlideDrawable>() {
+                    @Override
+                    public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
+                        superTextView3.setRightTvDrawableRight(resource);
+                    }
+                });
 ```
 
-##### 3.2.3、属性说明(以下属性全部可以通过xml文件配置和代码进行设置)
+#### 3.2.5、属性说明(以下属性全部可以通过xml文件配置和代码进行设置)
 
-属性名 | 字段 | 描述
-----|------|----
-sLeftIconRes | reference  | 左边图标资源
-sRightIconRes | reference  | 右边图标资源
-sLeftIconWidth | dimension  | 左边图标的宽度
-sLeftIconHeight | dimension  | 左边图标的高度
-sRightIconWidth | dimension  | 右边图标的高度
-sRightIconHeight | dimension  | 右边图标的高度
-sRightCheckBoxRes | reference  | 右边CheckBox图标资源
+属性名 | 字段 | 描述 | 默认值
+----|------|----| ----
 sLeftTextString | string  | 左边文字字符串
 sLeftTopTextString | string  | 左上文字字符串
 sLeftBottomTextString | string  | 左下文字字符串
-sLeftBottomTextString2 | string  | 左下第二个文字字符串
 sCenterTextString | string  | 中间文字字符串
+sCenterTopTextString | string  | 中上文字字符串
+sCenterBottomTextString | string  | 中下文字字符串
 sRightTextString | string  | 右边文字字符串
-sTopLineMargin| dimension | 顶部横线的Margin
-sTopLineMarginLeft | dimension | 顶部横线的MarginLeft
-sTopLineMarginRight | dimension | 顶部横线的MarginRight
-sBottomLineMargin | dimension | 底部横线的Margin
-sBottomLineMarginLeft | dimension | 底部横线的MarginLeft
-sBottomLineMarginRight | dimension | 底部横线的MarginRight
-sBothLineMargin | dimension | 上下两条横线的Margin
-sBothLineMarginLeft | dimension |  上下两条横线的MarginLeft
-sBothLineMarginRight | dimension | 上下两条横线的MarginRight
-sCenterSpaceHeight | dimension | top和bottom文字间的高度
-sLeftIconMarginLeft | dimension | 左边图标MarginLeft
-sLeftTextMarginLeft | dimension | 左边文字MarginLeft
-sLeftTopTextMarginLeft | dimension | 左上文字MarginLeft
-sLeftBottomTextMarginLeft | dimension | 左下文字MarginLeft
-sLeftBottomTextMarginLeft2 | dimension | 左下第二个文字MarginLeft
-sRightTextStringRightIconRes | reference | 右边文字的右边图标资源
-sRightTextStringRightIconResPadding | dimension | 右边文字的右边图标的Padding
-sRightIconMarginRight |dimension | 右边icon的MarginRight
-sRightTextMarginRight | dimension| 右边文字的MarginRight
-sRightCheckBoxMarginRight | dimension| 右边CheckBox的MarginRight
-sRightCheckBoxShow | boolean | 右边的CheckBox是否显示
-sIsChecked | boolean | 是否选中
-sUseRipple | boolean | 是否使用点击出现波纹效果
- sLeftTextSize | dimension |  左边文字的字体大小
- sLeftTopTextSize | dimension | 左上文字的字体大小
- sLeftBottomTextSize | dimension | 左下文字的字体大小   
- sLeftBottomTextSize2 | dimension | 左下第二个文字的字体大小   
- sRightTextSize | dimension |  右边文字的字体大小  
- sCenterTextSize | dimension |   中间文字的字体大小 
- sBackgroundColor | color | 背景颜色
- sLeftTextColor | color | 左边文字颜色
- sLeftTopTextColor | color | 左上文字颜色
- sLeftBottomTextColor | color | 左下文字颜色
- sLeftBottomTextColor2 | color | 左下第二个文字颜色
- sRightTextColor | color | 右边文字颜色
- sCenterTextColor | color | 中间文字颜色
- sIsSingLines | boolean | 是否单行显示
- sMaxLines | integer | 允许的最大行数
- sMaxEms | integer | 允许的最多字数
- sLineShow | enum | 分割线的显示方式none、top、bottom、both
- sBothLineWidth | dimension | 两条分割线的宽度
- sTopLineWidth | dimension | 上边分割线的宽度
- sBottomLineWidth | dimension | 下边分割线的宽度
- sLineColor | color | 分割线的颜色
- sLeftTopViewIsClickable | boolean | 左上view是否可点击
- sLeftBottomViewIsClickable | boolean | 左下view是否可点击
- sLeftBottomView2IsClickable | boolean | 左下第二个view是否可点击
- sBackgroundDrawableRes | reference | 背景资源
-   
-### 4、实现原理
-##### 4.1、需求分析
+sRightTopTextString | string  | 右上文字字符串
+sRightBottomTextString | string  | 右下文字字符串
+sLeftTextColor | color  | 左边文字颜色 | 默认0xFF373737
+sLeftTopTextColor | color  | 左上文字颜色 | 默认0xFF373737
+sLeftBottomTextColor | color  | 左下文字颜色 | 默认0xFF373737
+sCenterTextColor | color  | 中间文字颜色 | 默认0xFF373737
+sCenterTopTextColor | color  | 中上文字颜色 | 默认0xFF373737
+sCenterBottomTextColor | color  | 中下文字颜色 | 默认0xFF373737
+sRightTextColor | color  | 左边文字颜色 | 默认0xFF373737
+sRightTopTextColor | color  | 右上文字颜色 | 默认0xFF373737
+sRightBottomTextColor | color  | 右下文字颜色 | 默认0xFF373737
+sLeftTextSize | dimension  | 左边字体大小 | 默认15sp
+sLeftTopTextSize | dimension  | 左上字体大小 | 默认15sp
+sLeftBottomTextSize | dimension  | 左下字体大小 | 默认15sp
+sCenterTextSize | dimension  | 中间字体大小 | 默认15sp
+sCenterTopTextSize | dimension  | 中上字体大小 | 默认15sp
+sCenterBottomTextSize | dimension  | 中下字体大小 | 默认15sp
+sRightTextSize | dimension  | 右边字体大小 | 默认15sp
+sRightTopTextSize | dimension  | 右上字体大小 | 默认15sp
+sRightBottomTextSize | dimension  | 右下字体大小 | 默认15sp
+sLeftLines | integer  | 左边文字显示行数 | 默认1
+sLeftTopLines | integer  | 左上文字显示行数 | 默认1
+sLeftBottomLines | integer  | 左下文字显示行数 | 默认1
+sCenterLines | integer  | 中间文字显示行数 | 默认1
+sCenterTopLines | integer  | 中上文字显示行数 | 默认1
+sCenterBottomLines | integer  | 中下文字显示行数 | 默认1
+sRightLines | integer  | 右边文字显示行数 | 默认1
+sRightTopLines | integer  | 右上文字显示行数 | 默认1
+sRightBottomLines | integer  | 右下文字显示行数 | 默认1
+sLeftMaxEms | integer  | 左边文字显示个数 | 默认10
+sLeftTopMaxEms | integer  | 左上文字显示个数 | 默认10
+sLeftBottomMaxEms | integer  | 左下文字显示个数 | 默认10
+sCenterMaxEms | integer  | 中间文字显示个数 | 默认10
+sCenterTopMaxEms | integer  | 中上文字显示个数 | 默认10
+sCenterBottomMaxEms | integer  | 中下文字显示个数 | 默认10
+sRightMaxEms | integer  | 右边文字显示个数 | 默认10
+sRightTopMaxEms | integer  | 右上文字显示个数 | 默认10
+sRightBottomMaxEms | integer  | 右下文字显示个数 | 默认10
+sLeftViewGravity | enum  | 左边文字对齐方式<br>left_center(左对齐)<br>center(居中)<br>right_center(右对齐) | 默认center
+sCenterViewGravity | enum  | 中间文字对齐方式<br>left_center(左对齐)<br>center(居中)<br>right_center(右对齐) | 默认center
+sRightViewGravity | enum  | 右边文字对齐方式<br>left_center(左对齐)<br>center(居中)<br>right_center(右对齐) | 默认center
+sLeftTvDrawableLeft | reference  | 左边TextView左侧的drawable
+sLeftTvDrawableRight | reference  | 左边TextView右侧的drawable
+sCenterTvDrawableLeft | reference  | 中间TextView左侧的drawable
+sCenterTvDrawableRight | reference  | 中间TextView右侧的drawable
+sRightTvDrawableLeft | reference  | 右边TextView左侧的drawable
+sRightTvDrawableRight | reference  | 右边TextView右侧的drawable
+sTextViewDrawablePadding | dimension  | TextView的drawable对应的Padding | 默认10dp
+mLeftViewWidth | dimension  | 左边textView的宽度  为了中间文字左对齐的时候使用
+sTopDividerLineMarginLR | dimension  | 上边分割线的MarginLeft和MarginRight | 默认0dp
+sTopDividerLineMarginLeft | dimension  | 上边分割线的MarginLeft | 默认0dp
+sTopDividerLineMarginRight | dimension  | 上边分割线的MarginRight | 默认0dp
+sBottomDividerLineMarginLR | dimension  | 下边分割线的MarginLeft和MarginRigh | 默认0dp
+sBottomDividerLineMarginLeft | dimension  | 下边分割线的MarginLeft | 默认0dp
+sBottomDividerLineMarginRight | dimension  | 下边分割线的MarginRight | 默认0dp
+sDividerLineColor | color  | 分割线的颜色 | 默认0xFFE8E8E8
+sDividerLineHeight | dimension  | 分割线的高度 | 默认0.5dp
+sDividerLineType | enum  | 分割线显示方式 <br>none(不显示分割线)<br>top(显示上边的分割线)<br>bottom(显示下边的分割线)<br>both(显示上下两条分割线) | 默认bottom
+sLeftViewMarginLeft | dimension  | 左边view的MarginLeft | 默认10dp
+sLeftViewMarginRight | dimension  | 左边view的MarginRight | 默认10dp
+sCenterViewMarginLeft | dimension  | 中间view的MarginLeft | 默认10dp
+sCenterViewMarginRight | dimension  | 中间view的MarginRight | 默认10dp
+sRightViewMarginLeft | dimension  | 中间view的MarginLeft | 默认10dp
+sRightViewMarginRight | dimension  | 中间view的MarginRight | 默认10dp
+sLeftTextIsBold | boolean  | 左边文字是否加粗 | 默认false
+sLeftTopTextIsBold | boolean  | 左上文字是否加粗 | 默认false
+sLeftBottomTextIsBold | boolean  | 左下文字是否加粗 | 默认false
+sCenterTextIsBold | boolean  | 中间文字是否加粗 | 默认false
+sCenterTopTextIsBold | boolean  | 中上文字是否加粗 | 默认false
+sCenterBottomTextIsBold | boolean  | 中下文字是否加粗 | 默认false
+sRightTextIsBold | boolean  | 右边文字是否加粗 | 默认false
+sRightTopTextIsBold | boolean  | 右上文字是否加粗 | 默认false
+sRightBottomTextIsBold | boolean  | 右下文字是否加粗 | 默认false
+sLeftIconRes | reference  | 左边图片资源  可以用来显示网络图片或者本地
+sRightIconRes | reference  | 右边图片资源  可以用来显示网络图片或者本地
+sLeftIconWidth | dimension  | 左边图片资源的宽度  用于固定图片大小的时候使用
+sLeftIconHeight | dimension  | 左边图片资源的高度  用于固定图片大小的时候使用
+sRightIconWidth | dimension  | 右边图片资源的宽度  用于固定图片大小的时候使用
+sRightIconHeight | dimension  | 右边图片资源的高度  用于固定图片大小的时候使用
+sLeftIconMarginLeft | dimension  | 左边图片资源的MarginLeft | 默认10dp
+sRightIconMarginRight | dimension  | 右边图片资源的MarginLeft | 默认10dp
+sCenterSpaceHeight | dimension  | 上中下三行文字的间距 | 默认5dp
+sRightCheckBoxRes | reference  | 右边CheckBox的资源
+sRightCheckBoxMarginRight | dimension  | 右边CheckBox的MarginRight | 默认10dp
+sIsChecked | boolean  | 右边CheckBox是否选中 | 默认 false
+sUseRipple | boolean  | 是否开启点击出现水波效果 | 默认 true
+sBackgroundDrawableRes | reference  | SuperTextView的背景资源
+sRightViewType | enum  | 右边显示的特殊View<br>checkbox<br>switchBtn | 默认都不显示
+sRightSwitchMarginRight | dimension  | 右边SwitchBtn的MarginRight | 默认10dp
+sSwitchIsChecked | boolean  | 右边SwitchBtn是否选中 | 默认 false
+sTextOff | string  | TextOff | 默认""
+sTextOn | string  | TextOn | 默认""
+sSwitchMinWidth | dimension  | SwitchMinWidth | 系统默认
+sSwitchPadding | dimension  | SwitchPadding | 系统默认
+sThumbTextPadding | dimension  | ThumbTextPadding | 系统默认
+sThumbResource | reference  | 右边SwitchBtn自定义选中资源 | 系统默认
+sTrackResource | reference  | 右边SwitchBtn自定义未选中资源 | 系统默认
+sUseShape | boolean  | 是否使用shape设置圆角及触摸反馈<br>设为true之后才能使用一下属性 | 默认false
+sShapeSolidColor | color  | 填充色 | 默认false
+sShapeSelectorPressedColor | color  | 按下时候的颜色 | 默认0xffffffff
+sShapeSelectorNormalColor | color  | 正常显示的颜色 | 默认0xffffffff
+sShapeCornersRadius | dimension  | 四个角的圆角半径 | 默认0dp
+sShapeCornersTopLeftRadius | dimension  | 左上角的圆角半径 | 默认0dp
+sShapeCornersTopRightRadius | dimension  | 右上角的圆角半径 | 默认0dp
+sShapeCornersBottomLeftRadius | dimension  | 左下角的圆角半径 | 默认0dp
+sShapeCornersBottomRightRadius | dimension  | 右下角的圆角半径 | 默认0dp
+sShapeStrokeWidth | dimension  | 边框宽度 | 默认0dp
+sShapeStrokeDashWidth | dimension  | 虚线宽度 | 默认0dp
+sShapeStrokeDashGap | dimension  | 虚线间隙宽度 | 默认0dp
+sShapeStrokeColor | color  | 边框颜色 | 默认0dp
+
+
 > 黑格尔曾说过：存在即合理。SuperTextView的出现应该就是某种需求下的产物。
 
-在开发项目的过程中你会发现有很多页面的布局都是类似的，就比如说常见的设置页面，基本上都是图标+文字+图标的格式，而且出现的频率都很高，如果不做处理势必会写很多无用的代码降低开发效率，正因为如此我们为什么不把这一类view统一封装起来呐（其实就是程序猿的懒惰，哈哈），有了这个想法就开始调研市场上主流应用的显示样式，经过调研总结出一套显示方案涵盖了市面上90%以上的布局样式，目的是在以后的使用中快速高效的开发。
 
-##### 4.2、代码封装
-> 在介绍封装之前先说一句题外话，其实任何功能的封装并不难，还是看你愿不愿意花时间去做，及时是简单的功能真正实现起来的时候还是会或多或少的遇到一些问题，发现问题解决问题的过程其实就是进步的过程。好了，废话不多说，下边看代码。
-
-首先SuperTextView 是继承自 RelativeLayout实现，里边所有布局的添加都是通过Java代码实现的，事先定义好需要的参数名及类型
-
-下边只列出部分参数
-```
-    private int backgroundColor;//背景颜色
-    private int leftTVColor;//左边文字颜色
-    private int leftTopTVColor;//左上文字颜色
-    private int leftBottomTVColor;//左下文字颜色
-    private int leftBottomTVColor2;//左下第二个文字颜色
-    private int rightTVColor;//右边文字颜色
-    private int centerTVColor;//中间文字颜色
-
-    private boolean isSingLines = true;//是否单行显示   默认单行
-    private int maxLines = 1;//最多几行    默认显示一行
-    private int maxEms = 10;//最多几个字    默认显示10个汉子
-
-    private static final int NONE = 0;
-    private static final int TOP = 1;
-    private static final int BOTTOM = 2;
-    private static final int BOTH = 3;
-    private static final int DEFAULT = BOTTOM;
-
-```
-然后就是在构造方法里边去实现各个方法
-```
- public SuperTextView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        mContext = context;
-        getAttr(attrs);
-        initLayout();
-    }
-```
-我们知道系统控件可以从XML中拿到定义好的属性值，那么我们其实也是可以的，首先在attr中定义好相关属性名及字段类型然后通过AttributeSet去拿到相关属性值在进行设置
-```
-private void getAttr(AttributeSet attrs) {
-        //获取我们在attr中定义的SuperTextView相关属性
-        TypedArray typedArray = mContext.obtainStyledAttributes(attrs, R.styleable.SuperTextView);
-
-        //下边展示的各个类型参数的获取方法，drawable、string、boolean、int、px
-        leftIconRes = typedArray.getDrawable(R.styleable.SuperTextView_sLeftIconRes);
-        leftTextString = typedArray.getString(R.styleable.SuperTextView_sLeftTextString);
-        showCheckBox = typedArray.getBoolean(R.styleable.SuperTextView_sRightCheckBoxShow, false);
-        lineType = typedArray.getInt(R.styleable.SuperTextView_sLineShow, DEFAULT);
-        topLineMargin = typedArray.getDimensionPixelSize(R.styleable.SuperTextView_sTopLineMargin, defaultLinePadding);
-
-        //获取完之后记得recycle()释放掉资源
-        typedArray.recycle();
-      }
-```
-接下来就拿一个view为例进行说明如何动态添加view及设置相关属性
-```
-/**
-     * 初始化左边文字
-     */
-    private void initLeftText() {
-        leftTV = new TextView(mContext);
-        leftTextParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        leftTextParams.addRule(RelativeLayout.CENTER_VERTICAL, TRUE);
-        leftTextParams.addRule(RelativeLayout.RIGHT_OF, R.id.sLeftIconId);
-        setMargin(leftTextParams, leftTVMarginLeft, 0, dip2px(mContext, 10), 0);
-        leftTV.setId(R.id.sLeftTextId);
-        leftTV.setLayoutParams(leftTextParams);
-        leftTV.setText(leftTextString);
-        //设置Params的方法抽离出来便于以后统一调用
-        setTextViewParams(leftTV, isSingLines, maxLines, maxEms);
-        //设置字体颜色的方法抽离出来便于以后统一调用
-        setTextColor(leftTV, leftTVColor);
-        //设置字体大小的方法抽离出来便于以后统一调用
-        setTextSize(leftTV, leftTVSize);
-        //调用addView方法把我们动态创建的view添加到布局中
-        addView(leftTV);
-    }
-```
-初始化完view之后就是要暴露一些方法供外部人员使用了（部分代码示例）
-在这里我们返回SuperTextView对象是为了实现链式调用
-```
-    /**
-     * 获取checkbox状态
-     *
-     * @return 返回选择框当前选中状态
-     */
-    public boolean getCbisChecked() {
-        boolean isChecked = false;
-        if (rightCheckBox != null) {
-            isChecked = rightCheckBox.isChecked();
-        }
-        return isChecked;
-    }
-
-    /**
-     * 设置左边文字的颜色
-     *
-     * @param textColor 文字颜色值
-     * @return 返回对象
-     */
-    public SuperTextView setLeftTVColor(int textColor) {
-        leftTVColor = textColor;
-        if (leftTV == null) {
-            initLeftText();
-        } else {
-            leftTV.setTextColor(textColor);
-        }
-        return this;
-    }
-```
-最后就是一些回调方法的使用，以点击事件为例
-```
-/**
-     * 点击事件接口
-     * 这里没有使用interface是因为有些方法我们不是一定要实现的
-     * 用到哪个方法再去重写方法就可以了
-     */
-    public static class OnSuperTextViewClickListener {
-        public void onSuperTextViewClick() {
-        }
-
-        public void onLeftTopClick() {
-        }
-
-        public void onLeftBottomClick() {
-        }
-
-        public void onLeftBottomClick2() {
-        }
-
-    }
-```
-相关的set方法拿到OnSuperTextViewClickListener对象
-```
-   public SuperTextView setOnSuperTextViewClickListener(OnSuperTextViewClickListener listener) {
-        onSuperTextViewClickListener = listener;
-        return this;
-    }
-```
-
-初始化view的时候在各个view的点击事件中添加相应的回调方法就行了
-```
-       if (mLeftTopViewIsClickable) {
-            leftTopTV.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (onSuperTextViewClickListener != null) {
-                        onSuperTextViewClickListener.onLeftTopClick();
-                    }
-                }
-            });
-        }
-```
-> 以上只是源码中的部分方法拿出来供分析使用，看了之后是不是感觉实现其实很简单，赶紧自己着手实现一个吧！
-
-##### 4.3、总结
-想必看到这里的小伙伴已经对这个库的源码实现方式了解了，这里只是把实现的流程给大家介绍了一下，我又对这个库做了一个简化版的处理，有兴趣的小伙伴可以去读读源码哦，发现哪里写的不妥的地方还请指正。
-
-## 5、更新日志
-
-### V1.1.2
-*   上下分割线添加单独设置左右边距的参数
-```
-                1、SuperTextVIew配置方法如下:下列两种方式都是单独使用
-                
-                //方法一
-                stv:sTopLineMarginLeft="10dp"
-                stv:sTopLineMarginRight="0dp"
-                 
-                stv:sBottomLineMarginLeft="10dp"
-                stv:sBottomLineMarginRight="0dp"
-                
-                //方法二
-                stv:sBothLineMarginLeft="10dp"
-                stv:sBothLineMarginRight="0dp"
-                                
-                2、CommonTextView配置方法如下：下列两种方式都是单独使用
-                
-                //方法一
-                ctv:cTopDividerLineMarginLeft="10dp"
-                ctv:cTopDividerLineMarginRight="0dp"
-
-                ctv:cBottomDividerLineMarginLeft="10dp"
-                ctv:cBottomDividerLineMarginRight="0dp"
-                
-                //方法二
-                ctv:cBothDividerLineMarginLeft="10dp"
-                ctv:cBothDividerLineMarginRight="0dp"
-```            
-
-### V1.1.1
-* 	1、SuperTextview和CommonTextview新增点击时候自定义选中和默认背景效果
-```
-                                sBackgroundDrawableRes="@drawable/selector_red"
-                                
-                                cBackgroundDrawableRes="@drawable/selector_red"
-```
-                                
-*    2、CommonTextview新增中间布局左对齐属性
-```
-                                两个属性配合使用
-                                ctv:cIsCenterAlignLeft="true"
-                                ctv:cCenterViewMarginLeft="200dp"
-               
-```
-
-### V1.1
-* 	修复SuperTextView和CommonTextView点击事件被子View消耗掉的bug（具体使用请参考文档）
-
-### V1.0.9
-* 	SuperTextView新增左右图标可自定义大小的功能
-```
-                                stv:sRightIconWidth="30dp"
-                                stv:sRightIconHeight="30dp"
-                                stv:sLeftIconWidth="30dp"
-                                stv:slefticonHeight="30dp"
- ```                               
-### V1.0.8
-* 	修复CommonTextView点击事件无效的bug
-
-### V1.0.7
-* 	CommonTextView新增支持加载网络图片
-
-### V1.0.6
-* 	新增设置分割线颜色和宽度的方法
-* 	新增简化版CommonTextView
-
-### V1.0.3
-* 	新增左右两边图片支持常用三方库加载网络图片
-
-### V1.0.2
-* 修复文字内容过多，超过1行的处理，导致两边的文字会引起重叠的bug
-
-### V1.0.1
-* 修复编译版本不同导致无法正常使用的bug
-
-### V1.0.0
-* 功能强大的TextView
+## 4、[更新日志](https://github.com/lygttpod/SuperTextView/releases)
 
 # 意见反馈
 
-如果遇到问题或者好的建议，请反馈到我的邮箱：[lygttpod@163.com](mailto:lygttpod@163.com) 或者[lygttpod@gmail.com](mailto:lygttpod@gmail.com)
+如果遇到问题或者好的建议，请反馈到：[issue](https://github.com/lygttpod/RxHttpUtils/issues)、[lygttpod@163.com](mailto:lygttpod@163.com) 或者[lygttpod@gmail.com](mailto:lygttpod@gmail.com)
 
 如果觉得对你有用的话，点一下右上的星星赞一下吧!
+
+## 代码是最好的老师，更多详细用法请查看 [demo](https://github.com/lygttpod/SuperTextView/tree/master/app):feet:
+
+
+## 打赏支持
+
+如果您觉得 SuperTextView 开源库帮你节省了大量的开发时间，请扫描下方的二维码随意打赏，要是能打赏个 10.24 :monkey_face:就太:thumbsup:了。您的支持将鼓励我继续创作:octocat:
+
+
+<p align="center">
+  <img src="http://osnoex6vf.bkt.clouddn.com/pay.png" width="450">
+</p>
+
+
 
 # License
 ```

@@ -8,15 +8,12 @@ group='com.github.lygttpod'
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
-
     defaultConfig {
-        minSdkVersion 11
+        minSdkVersion 14
         targetSdkVersion 24
-        versionCode 112
-        versionName "1.1.2"
-
+        versionCode 208
+        versionName "2.0.8"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
     buildTypes {
         release {
@@ -27,14 +24,10 @@ android {
     lintOptions {
         abortOnError false
     }
+    productFlavors {
+    }
 }
 
 dependencies {
 }
 
-//publish {
-//    userOrg = 'lygttpod'
-//    groupId = 'com.allen.supertextview'
-//    artifactId = 'supertextview'
-//    publishVersion = '1.0.3'
-//}

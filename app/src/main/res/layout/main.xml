@@ -31,17 +31,20 @@
                 android:text="(更多组合方式可自行组合)"
                 android:textColor="@color/colorAccent" />
 
+
             <com.allen.library.SuperTextView
-                android:id="@+id/super_tv"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                stv:sLeftBottomTextColor2="@color/colorAccent"
+                stv:sCenterBottomTextColor="@color/colorAccent"
+                stv:sCenterBottomTextString="限额说明>>"
+                stv:sCenterTopTextString=" "
+                stv:sCenterViewGravity="left_center"
                 stv:sLeftBottomTextString="招商银行（8888）"
-                stv:sLeftBottomTextString2="限额说明>>"
                 stv:sLeftIconRes="@drawable/bank_zhao_shang"
                 stv:sLeftTopTextString="银行卡支付"
+                stv:sLeftViewGravity="left_center"
                 stv:sRightCheckBoxRes="@drawable/circular_check_bg"
-                stv:sRightCheckBoxShow="true" />
+                stv:sRightViewType="checkbox" />
 
             <com.allen.library.SuperTextView
                 android:layout_width="match_parent"
@@ -49,14 +52,44 @@
                 stv:sLeftBottomTextColor="@color/colorAccent"
                 stv:sLeftBottomTextString="限额说明>>"
                 stv:sLeftIconRes="@drawable/not_bank_card_icon"
-                stv:sLeftTopTextString="银行卡支付" />
+                stv:sLeftTopTextString="银行卡支付"
+                stv:sLeftViewGravity="left_center"
+
+                stv:sRightCheckBoxRes="@drawable/circular_check_bg" />
+
 
             <com.allen.library.SuperTextView
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 stv:sLeftBottomTextString="188****8888"
                 stv:sLeftIconRes="@drawable/head_default"
-                stv:sLeftTopTextString="张三" />
+                stv:sLeftTopTextString="张三"
+                stv:sLeftViewGravity="left_center" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                stv:sLeftTopTextString="迪丽热巴"
+                stv:sLeftViewGravity="left_center"
+                stv:sRightIconRes="@drawable/arrow_right_red"
+                stv:sRightTvDrawableRight="@drawable/head_default" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                stv:sLeftTopTextString="推送通知"
+                stv:sLeftViewGravity="left_center"
+                stv:sRightViewType="switchBtn" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                stv:sLeftTextString="声音"
+                stv:sRightViewType="switchBtn"
+                stv:sSwitchIsChecked="true"
+                stv:sSwitchMinWidth="40dp"
+                stv:sThumbResource="@drawable/thumb"
+                stv:sTrackResource="@drawable/track" />
 
             <com.allen.library.SuperTextView
                 android:layout_width="match_parent"
@@ -84,12 +117,18 @@
                 android:layout_height="50dp"
                 stv:sLeftTextSize="14dip"
                 stv:sLeftTextString="客服热线"
+                stv:sRightIconRes="@drawable/arrow_right_red"
                 stv:sRightTextColor="#ff0000"
                 stv:sRightTextSize="12dp"
-                stv:sRightTextString="4006179999"
-                stv:sRightTextStringRightIconRes="@drawable/arrow_right_red"
-                stv:sRightTextStringRightIconResPadding="8dip"
-                stv:sUseRipple="true" />
+                stv:sRightTextString="4006179999" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                stv:sLeftTextString="账号与安全"
+                stv:sRightIconRes="@drawable/arrow_right_red"
+                stv:sRightTextString="已保护"
+                stv:sRightTvDrawableLeft="@drawable/v1" />
 
             <com.allen.library.SuperTextView
                 android:layout_width="match_parent"
@@ -108,28 +147,43 @@
             <com.allen.library.SuperTextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                stv:sLeftIconHeight="25dp"
-                stv:sLeftIconRes="@drawable/ic_hint_music"
-                stv:sLeftIconWidth="25dp"
-                stv:sLeftTextString="自定义图片大小"
-                stv:sRightTextString="20dp" />
+                stv:sLeftTextString="设置"
+                stv:sRightTextBg="@color/colorAccent"
+                stv:sRightTextColor="@color/white"
+                stv:sRightTextPadding="5dp"
+                stv:sRightTextSize="10sp"
+                stv:sRightTextString="单个text背景颜色" />
 
             <com.allen.library.SuperTextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                stv:sLeftIconHeight="30dp"
-                stv:sLeftIconRes="@drawable/ic_update_password"
-                stv:sLeftIconWidth="30dp"
+                stv:sLeftIconHeight="25dp"
+                stv:sLeftIconRes="@drawable/ic_hint_music"
+                stv:sLeftIconWidth="25dp"
                 stv:sLeftTextString="自定义图片大小"
-                stv:sRightTextString="30dp" />
+                stv:sRightTextString="宽高20dp" />
+
 
             <com.allen.library.SuperTextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 stv:sBackgroundDrawableRes="@drawable/selector_red"
                 stv:sLeftTextString="自定义背景点击效果"
-                stv:sRightTextStringRightIconRes="@drawable/arrow_right_red" />
+                stv:sRightIconRes="@drawable/arrow_right_red" />
 
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                stv:sLeftTextString="账号与安全"
+                stv:sRightIconRes="@drawable/arrow_right_red"
+                stv:sRightTextString="已保护"
+                stv:sRightTvDrawableLeft="@drawable/v1"
+                stv:sShapeCornersRadius="5dp"
+                stv:sShapeSelectorPressedColor="@color/gray"
+                stv:sShapeStrokeColor="@color/colorAccent"
+                stv:sShapeStrokeWidth="0.3dp"
+                stv:sUseShape="true" />
         </LinearLayout>
     </ScrollView>
 
